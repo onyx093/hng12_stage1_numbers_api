@@ -57,6 +57,16 @@ def digit_sum(n: int) -> int:
     """Compute the sum of the digits of the absolute value of n."""
     return sum(int(d) for d in str(abs(n)))
 
+@app.get("/")
+def root():
+    """
+    Root endpoint.
+    """
+    return {
+        "message": "Welcome to the Number Classifier API!",
+        "built_by": "Olaleye Obidiya(Onyx_Oceanview)",
+        "github_repo": "https://github.com/onyx093/hng12_stage1_numbers_api",
+    }
 
 @app.get("/api/classify-number")
 def classify_number(number: str):
